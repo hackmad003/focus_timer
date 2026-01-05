@@ -1,0 +1,40 @@
+{
+  "name": "Focus Timer Pro",
+  "short_name": "Focus Timer",
+  "description": "Enterprise-grade Focus Timer implementing the Pomodoro Technique",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f1e",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Start Focus Session",
+      "short_name": "Focus",
+      "description": "Start a new focus session",
+      "url": "/?action=start",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

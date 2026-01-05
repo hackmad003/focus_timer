@@ -1,0 +1,145 @@
+/**
+ * Timer Controls Styles
+ */
+
+.timer-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Secondary Controls */
+.secondary-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  width: 100%;
+  justify-content: center;
+}
+
+/* Control Buttons */
+.control-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-base);
+  font-weight: 600;
+  transition: all var(--duration-fast);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.control-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.control-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+.control-btn-primary {
+  padding: var(--spacing-lg) var(--spacing-3xl);
+  font-size: var(--text-xl);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white;
+  box-shadow: 0 8px 30px var(--color-focus-glow);
+  min-width: 200px;
+}
+
+.control-btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
+  box-shadow: 0 12px 40px var(--color-focus-glow);
+  transform: translateY(-2px);
+}
+
+.control-btn-primary.running {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 8px 30px rgba(239, 68, 68, 0.3);
+}
+
+.control-btn-primary.running:hover:not(:disabled) {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.control-btn-primary .btn-icon {
+  font-size: var(--text-2xl);
+}
+
+/* Secondary Button */
+.control-btn-secondary {
+  background: var(--color-surface-elevated);
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-border);
+}
+
+.control-btn-secondary:hover:not(:disabled) {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+  border-color: var(--color-primary);
+}
+
+.control-label {
+  font-size: var(--text-sm);
+}
+
+/* Keyboard Shortcuts Hint */
+.keyboard-shortcuts-hint {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-md);
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+kbd {
+  padding: 0.25rem 0.5rem;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .control-btn-primary {
+    min-width: 160px;
+    padding: var(--spacing-md) var(--spacing-2xl);
+  }
+
+  .keyboard-shortcuts-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .secondary-controls {
+    width: 100%;
+  }
+
+  .control-btn-secondary {
+    flex: 1;
+  }
+
+  .control-label {
+    display: none;
+  }
+}
