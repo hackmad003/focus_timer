@@ -31,6 +31,7 @@ export const TimerPage: React.FC = () => {
   useEffect(() => {
     settings.loadSettings();
     statistics.loadStatistics();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Apply theme and accessibility settings
