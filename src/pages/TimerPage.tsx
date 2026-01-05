@@ -31,7 +31,6 @@ export const TimerPage: React.FC = () => {
   useEffect(() => {
     settings.loadSettings();
     statistics.loadStatistics();
-    timer.loadState();
   }, []);
 
   // Apply theme and accessibility settings

@@ -14,7 +14,6 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { useStatisticsStore } from '@/store/useStatisticsStore';
-import { formatDuration, getCurrentDate } from '@/utils/time';
 import { format, subDays } from 'date-fns';
 import { CHART_COLORS } from '@/utils/constants';
 

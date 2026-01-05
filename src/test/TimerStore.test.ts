@@ -2,7 +2,7 @@
  * Timer Store Tests
  */
 
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { useTimerStore } from '@/store/useTimerStore';
 import { TimerState, SessionType } from '@/types';
 

@@ -35,35 +35,35 @@ class VibrationService {
    * Triggers a short vibration
    */
   short(): void {
-    this.vibrate(VIBRATION_PATTERNS.SHORT);
+    this.vibrate([...VIBRATION_PATTERNS.SHORT]);
   }
 
   /**
    * Triggers a medium vibration
    */
   medium(): void {
-    this.vibrate(VIBRATION_PATTERNS.MEDIUM);
+    this.vibrate([...VIBRATION_PATTERNS.MEDIUM]);
   }
 
   /**
    * Triggers a long vibration
    */
   long(): void {
-    this.vibrate(VIBRATION_PATTERNS.LONG);
+    this.vibrate([...VIBRATION_PATTERNS.LONG]);
   }
 
   /**
    * Triggers a double vibration
    */
   double(): void {
-    this.vibrate(VIBRATION_PATTERNS.DOUBLE);
+    this.vibrate([...VIBRATION_PATTERNS.DOUBLE]);
   }
 
   /**
    * Triggers a success vibration pattern
    */
   success(): void {
-    this.vibrate(VIBRATION_PATTERNS.SUCCESS);
+    this.vibrate([...VIBRATION_PATTERNS.SUCCESS]);
   }
 
   /**

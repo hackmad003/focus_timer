@@ -117,7 +117,7 @@ class StorageService {
 
     try {
       Object.values(STORAGE_KEYS).forEach((key) => {
-        localStorage.removeItem(key);
+        localStorage.removeItem(key as string);
       });
     } catch (error) {
       throw new AppError(
@@ -169,7 +169,7 @@ class StorageService {
    */
   importData(data: Record<string, unknown>): void {
     Object.entries(data).forEach(([key, value]) => {
-      if (Object.values(STORAGE_KEYS).includes(key)) {
+      if (Object.values(STORAGE_KEYS).includes(key as any)) {
         try {
           localStorage.setItem(key, JSON.stringify(value));
         } catch (error) {

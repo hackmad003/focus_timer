@@ -5,13 +5,12 @@
 import { describe, it, expect } from 'vitest';
 import {
   validateFocusDuration,
-  validateShortBreakDuration,
   validateVolume,
   sanitizeTaskLabel,
   validateEmail,
   clamp,
 } from '@/utils/validation';
-import { AppError, ErrorType } from '@/types';
+import { AppError } from '@/types';
 
 describe('Validation Utilities', () => {
   describe('validateFocusDuration', () => {

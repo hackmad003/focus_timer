@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { useStatisticsStore } from '@/store/useStatisticsStore';
 import { formatDuration } from '@/utils/time';
-import { FaChartLine, FaDownload, FaTrash } from 'react-icons/fa';
+import { FaDownload, FaTrash } from 'react-icons/fa';
 import { StatisticsChart } from './StatisticsChart';
 import './StatisticsPanel.css';
 

@@ -3,7 +3,7 @@
  * Sets up the testing environment
  */
 
-import { expect, afterEach, vi } from 'vitest';
+import { afterEach, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -19,21 +19,21 @@ const localStorageMock = {
   removeItem: vi.fn(),
   clear: vi.fn(),
 };
-global.localStorage = localStorageMock as any;
+(globalThis as any).localStorage = localStorageMock;
 
 // Mock Notification API
-global.Notification = {
+(globalThis as any).Notification = {
   permission: 'default',
   requestPermission: vi.fn(() => Promise.resolve('granted')),
-} as any;
+};
 
 // Mock Audio API
-global.Audio = vi.fn(() => ({
+(globalThis as any).Audio = vi.fn(() => ({
   play: vi.fn(() => Promise.resolve()),
   pause: vi.fn(),
   addEventListener: vi.fn(),
   removeEventListener: vi.fn(),
-})) as any;
+}));
 
 // Mock navigator.vibrate
 Object.defineProperty(navigator, 'vibrate', {

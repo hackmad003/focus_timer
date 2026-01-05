@@ -17,12 +17,12 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\""
   },
   "dependencies": {
+    "date-fns": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "zustand": "^4.4.7",
-    "date-fns": "^3.0.0",
+    "react-icons": "^5.0.1",
     "recharts": "^2.10.3",
-    "react-icons": "^5.0.1"
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",
@@ -40,7 +40,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "jsdom": "^23.0.1",
     "prettier": "^3.1.1",
-    "typescript": "^5.2.2",
+    "typescript": "^5.9.3",
     "vite": "^5.0.8",
     "vite-plugin-pwa": "^0.17.4",
     "vitest": "^1.0.4",

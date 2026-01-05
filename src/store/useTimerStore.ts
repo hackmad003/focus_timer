@@ -11,7 +11,7 @@ import {
   Session,
   Settings,
 } from '@/types';
-import { minutesToSeconds, generateTimestampId, getCurrentDate } from '@/utils/time';
+import { minutesToSeconds, generateTimestampId } from '@/utils/time';
 import { storageService } from '@/services/StorageService';
 import { STORAGE_KEYS } from '@/utils/constants';
 
@@ -335,7 +335,8 @@ export const useTimerStore = create<TimerStore>((set, get) => ({
    */
   loadState: () => {
     try {
-      const savedState = storageService.get<typeof state & { timestamp: number }>(
+      const currentState = get();
+      const savedState = storageService.get<typeof currentState & { timestamp: number }>(
         STORAGE_KEYS.TIMER_STATE
       );
 
@@ -384,8 +385,54 @@ function saveSession(session: Session): void {
  */
 function getSettings(): Settings {
   try {
-    return storageService.get<Settings>(STORAGE_KEYS.SETTINGS) || require('@/utils/constants').DEFAULT_SETTINGS;
+    const savedSettings = storageService.get<Settings>(STORAGE_KEYS.SETTINGS);
+    if (savedSettings) {
+      return savedSettings;
+    }
+    // Fallback to default settings
+    return {
+      focusDuration: 25,
+      shortBreakDuration: 5,
+      longBreakDuration: 10,
+      longBreakInterval: 4,
+      timerMode: 'COUNTDOWN' as any,
+      autoStartBreaks: false,
+      autoStartPomodoros: false,
+      notificationSound: 'BELL' as any,
+      notificationVolume: 80,
+      enableVibration: true,
+      enableDesktopNotifications: true,
+      ambientSound: 'NONE' as any,
+      ambientVolume: 50,
+      theme: 'DARK' as any,
+      show24HourFormat: true,
+      showMilliseconds: false,
+      highContrast: false,
+      fontSize: 100,
+      reduceMotion: false,
+    };
   } catch {
-    return require('@/utils/constants').DEFAULT_SETTINGS;
+    // Fallback settings
+    return {
+      focusDuration: 25,
+      shortBreakDuration: 5,
+      longBreakDuration: 10,
+      longBreakInterval: 4,
+      timerMode: 'COUNTDOWN' as any,
+      autoStartBreaks: false,
+      autoStartPomodoros: false,
+      notificationSound: 'BELL' as any,
+      notificationVolume: 80,
+      enableVibration: true,
+      enableDesktopNotifications: true,
+      ambientSound: 'NONE' as any,
+      ambientVolume: 50,
+      theme: 'DARK' as any,
+      show24HourFormat: true,
+      showMilliseconds: false,
+      highContrast: false,
+      fontSize: 100,
+      reduceMotion: false,
+    };
   }
 }
